@@ -1,0 +1,11 @@
+c:\users\cemsina\documents\visual studio 2015\Projects\sudoku\sudoku\bin\Debug\sudoku.exe.config
+c:\users\cemsina\documents\visual studio 2015\Projects\sudoku\sudoku\bin\Debug\sudoku.exe
+c:\users\cemsina\documents\visual studio 2015\Projects\sudoku\sudoku\bin\Debug\sudoku.pdb
+c:\users\cemsina\documents\visual studio 2015\Projects\sudoku\sudoku\obj\Debug\sudoku.csprojResolveAssemblyReference.cache
+c:\users\cemsina\documents\visual studio 2015\Projects\sudoku\sudoku\obj\Debug\sudoku.Form1.resources
+c:\users\cemsina\documents\visual studio 2015\Projects\sudoku\sudoku\obj\Debug\sudoku.Properties.Resources.resources
+c:\users\cemsina\documents\visual studio 2015\Projects\sudoku\sudoku\obj\Debug\sudoku.UI_Group.resources
+c:\users\cemsina\documents\visual studio 2015\Projects\sudoku\sudoku\obj\Debug\sudoku.UI_Sudoku.resources
+c:\users\cemsina\documents\visual studio 2015\Projects\sudoku\sudoku\obj\Debug\sudoku.csproj.GenerateResource.Cache
+c:\users\cemsina\documents\visual studio 2015\Projects\sudoku\sudoku\obj\Debug\sudoku.exe
+c:\users\cemsina\documents\visual studio 2015\Projects\sudoku\sudoku\obj\Debug\sudoku.pdb
