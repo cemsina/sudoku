@@ -14,6 +14,7 @@ namespace sudoku
         public static sudoku mainSudoku;
         public static UI_Sudoku UI_mainSudoku;
         public static List<SudokuTextBox> SudokuTextBoxList;
+        public static Form mainForm;
         [STAThread]
         static void Main()
         {

@@ -9,3 +9,14 @@ c:\users\cemsina\documents\visual studio 2015\Projects\sudoku\sudoku\obj\Debug\s
 c:\users\cemsina\documents\visual studio 2015\Projects\sudoku\sudoku\obj\Debug\sudoku.csproj.GenerateResource.Cache
 c:\users\cemsina\documents\visual studio 2015\Projects\sudoku\sudoku\obj\Debug\sudoku.exe
 c:\users\cemsina\documents\visual studio 2015\Projects\sudoku\sudoku\obj\Debug\sudoku.pdb
+C:\Users\user\Documents\sudoku\sudoku\bin\Debug\sudoku.exe.config
+C:\Users\user\Documents\sudoku\sudoku\bin\Debug\sudoku.exe
+C:\Users\user\Documents\sudoku\sudoku\bin\Debug\sudoku.pdb
+C:\Users\user\Documents\sudoku\sudoku\obj\Debug\sudoku.csprojResolveAssemblyReference.cache
+C:\Users\user\Documents\sudoku\sudoku\obj\Debug\sudoku.Form1.resources
+C:\Users\user\Documents\sudoku\sudoku\obj\Debug\sudoku.Properties.Resources.resources
+C:\Users\user\Documents\sudoku\sudoku\obj\Debug\sudoku.UI_Group.resources
+C:\Users\user\Documents\sudoku\sudoku\obj\Debug\sudoku.UI_Sudoku.resources
+C:\Users\user\Documents\sudoku\sudoku\obj\Debug\sudoku.csproj.GenerateResource.Cache
+C:\Users\user\Documents\sudoku\sudoku\obj\Debug\sudoku.exe
+C:\Users\user\Documents\sudoku\sudoku\obj\Debug\sudoku.pdb
