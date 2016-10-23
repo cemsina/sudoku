@@ -48,9 +48,9 @@ namespace sudoku
         private void button1_Click(object sender, EventArgs e)
         {
             SudokuSolver solve = new SudokuSolver();
-            solve.Solve();
+            solve.SolveNormalMethod(); ;
             solve.AfterSolved();
-            removeTextChangedHandlers();
+            //removeTextChangedHandlers();
             showUI();
         }
         public void removeTextChangedHandlers()
@@ -63,12 +63,14 @@ namespace sudoku
         }
         public void showUI()
         {
+            var axxxx = Program.mainSudoku;
             foreach (SudokuTextBox t in Program.SudokuTextBoxList)
             {
-                if(t.unit.value == 0) {
+                Unit tUnit = t.unit;
+                if(tUnit.value == 0) {
                     t.Text += "?(";
                     int i = 0;
-                    foreach(int p in t.unit.posibilities)
+                    foreach(int p in tUnit.posibilities)
                     {
                         if (i == 0) {
                             t.Text += p.ToString();
@@ -83,37 +85,54 @@ namespace sudoku
                 }
                 else
                 {
-                    t.Text = t.unit.value.ToString();
+                    t.Text = tUnit.value.ToString();
                 }
             }
         }
         private void button2_Click(object sender, EventArgs e)
         {
-            Program.mainSudoku.unitList.getUnitByLocation(new Location(1, 1)).value = 2;
-            Program.mainSudoku.unitList.getUnitByLocation(new Location(1, 7)).value = 3;
-            Program.mainSudoku.unitList.getUnitByLocation(new Location(1, 8)).value = 8;
-            Program.mainSudoku.unitList.getUnitByLocation(new Location(3, 1)).value = 1;
-            Program.mainSudoku.unitList.getUnitByLocation(new Location(3, 3)).value = 3;
-            Program.mainSudoku.unitList.getUnitByLocation(new Location(3, 6)).value = 4;
-            Program.mainSudoku.unitList.getUnitByLocation(new Location(3, 8)).value = 5;
-            Program.mainSudoku.unitList.getUnitByLocation(new Location(3, 9)).value = 7;
-            Program.mainSudoku.unitList.getUnitByLocation(new Location(4, 1)).value = 5;
-            Program.mainSudoku.unitList.getUnitByLocation(new Location(4, 3)).value = 7;
-            Program.mainSudoku.unitList.getUnitByLocation(new Location(4, 4)).value = 3;
-            Program.mainSudoku.unitList.getUnitByLocation(new Location(4, 6)).value = 2;
-            Program.mainSudoku.unitList.getUnitByLocation(new Location(4, 7)).value = 8;
-            Program.mainSudoku.unitList.getUnitByLocation(new Location(4, 8)).value = 1;
-            Program.mainSudoku.unitList.getUnitByLocation(new Location(5, 7)).value = 2;
-            Program.mainSudoku.unitList.getUnitByLocation(new Location(5, 8)).value = 3;
-            Program.mainSudoku.unitList.getUnitByLocation(new Location(5, 9)).value = 6;
-            Program.mainSudoku.unitList.getUnitByLocation(new Location(6, 5)).value = 8;
-            Program.mainSudoku.unitList.getUnitByLocation(new Location(7, 7)).value = 1;
-            Program.mainSudoku.unitList.getUnitByLocation(new Location(8, 3)).value = 2;
-            Program.mainSudoku.unitList.getUnitByLocation(new Location(8, 4)).value = 8;
-            Program.mainSudoku.unitList.getUnitByLocation(new Location(9, 2)).value = 6;
-            Program.mainSudoku.unitList.getUnitByLocation(new Location(9, 6)).value = 7;
-            Program.mainSudoku.unitList.getUnitByLocation(new Location(9, 8)).value = 4;
+            SudokuSolver solve = new SudokuSolver();
+            solve.Solve();
+            //removeTextChangedHandlers();
+            solve.AfterSolved();
             showUI();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if(textBox1.Text == "")//save
+            {
+                int i = 0;
+                foreach(Unit u in Program.mainSudoku.unitList)
+                {
+                    if(u.value == 0) { continue; }
+                    if(i == 0)
+                    {
+                        textBox1.Text += u.location.RowNo.ToString() + "," + u.location.ColumnNo.ToString() + "," + u.value.ToString();
+                    }
+                    else
+                    {
+                        textBox1.Text += "|"+u.location.RowNo.ToString() + "," + u.location.ColumnNo.ToString() + "," + u.value.ToString();
+                    }
+                    i++;
+                }
+            }
+            else
+            {
+                foreach (Unit u in Program.mainSudoku.unitList)
+                {
+                    u.value = 0;
+                }
+                String str = textBox1.Text;
+                String[] strArr = str.Split('|');
+                foreach(string s in strArr)
+                {
+                    String[] o = s.Split(',');
+                    Location loc = new Location(Convert.ToInt32(o[0]), Convert.ToInt32(o[1]));
+                    Program.mainSudoku.unitList.getUnitByLocation(loc).value = Convert.ToInt32(o[2]);
+                }
+                showUI();
+            }
         }
     }
 }

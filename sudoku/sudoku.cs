@@ -29,6 +29,7 @@ namespace sudoku
                 }
             }
         }
+        
         public List<Unit> getGroup(int groupNo)
         {
             switch (groupNo)

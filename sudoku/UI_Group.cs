@@ -18,7 +18,7 @@ namespace sudoku
             InitializeComponent();
             for (int i = 0;i < uList.Count(); i++)
             {
-                SudokuTextBox t = new SudokuTextBox(uList[i]);
+                SudokuTextBox t = new SudokuTextBox(uList[i].location);
                 Program.SudokuTextBoxList.Add(t);
                 tableLayoutPanel1.Controls.Add(t, uList[i].location.ColumnNo.ToLayoutNumber(), uList[i].location.RowNo.ToLayoutNumber());
             }

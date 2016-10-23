@@ -14,20 +14,15 @@ namespace sudoku
         private Unit p_unit;
         public Unit unit
         {
-            get { return p_unit; }
-            set
-            {// değişmiyor
-                p_unit = value;
-                this.Text = p_unit.value.ToString();
-            }
+            get { return Program.mainSudoku.unitList.getUnitByLocation(location); }
         }
-
-        public SudokuTextBox(Unit u)
+        public Location location;
+        public SudokuTextBox(Location loc)
         {
             TextChangedEventHandler = new EventHandler(this.TextChangedHandler);
             this.TextChanged += TextChangedEventHandler;
             this.EnabledChanged += new EventHandler(this.EnabledChangedHandler);
-            unit = u;
+            location = loc;
             this.Enabled = true;
             this.Dock = DockStyle.Fill;
             this.Anchor = AnchorStyles.None;
