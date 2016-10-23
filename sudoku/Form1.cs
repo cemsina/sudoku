@@ -50,13 +50,41 @@ namespace sudoku
             SudokuSolver solve = new SudokuSolver();
             solve.Solve();
             solve.AfterSolved();
+            removeTextChangedHandlers();
             showUI();
+        }
+        public void removeTextChangedHandlers()
+        {
+            button1.Enabled = false;
+            foreach (SudokuTextBox t in Program.SudokuTextBoxList)
+            {
+                t.TextChanged -= t.TextChangedEventHandler;
+            }
         }
         public void showUI()
         {
             foreach (SudokuTextBox t in Program.SudokuTextBoxList)
             {
-                t.Text = t.unit.value.ToString();
+                if(t.unit.value == 0) {
+                    t.Text += "?(";
+                    int i = 0;
+                    foreach(int p in t.unit.posibilities)
+                    {
+                        if (i == 0) {
+                            t.Text += p.ToString();
+                        }
+                        else
+                        {
+                            t.Text += ","+p.ToString();
+                        }
+                        i++;
+                    }
+                    t.Text += ")";
+                }
+                else
+                {
+                    t.Text = t.unit.value.ToString();
+                }
             }
         }
         private void button2_Click(object sender, EventArgs e)

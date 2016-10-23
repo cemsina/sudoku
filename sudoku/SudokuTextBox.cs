@@ -10,6 +10,7 @@ namespace sudoku
 {
     public class SudokuTextBox : TextBox
     {
+        public EventHandler TextChangedEventHandler;
         private Unit p_unit;
         public Unit unit
         {
@@ -23,7 +24,8 @@ namespace sudoku
 
         public SudokuTextBox(Unit u)
         {
-            this.TextChanged += new EventHandler(this.TextChangedHandler);
+            TextChangedEventHandler = new EventHandler(this.TextChangedHandler);
+            this.TextChanged += TextChangedEventHandler;
             this.EnabledChanged += new EventHandler(this.EnabledChangedHandler);
             unit = u;
             this.Enabled = true;
